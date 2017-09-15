@@ -1,0 +1,18 @@
+<p>
+  default works!
+</p>
+<!-- 綁定txtWeekDay1 -->
+<input type="text" [(ngModel)]="txtWeekDay1"> 
+<!-- 透過『屬性綁定』，將Default中的「txtWeekDay1」指定給 Modal 中『Input』的 「selectedDay」 屬性 -->
+<!-- 透過『事件綁定』，將Modal中『Output』的事件「getSelectedDateInModal」綁上Default的「putSelectedDateInDefault1()」函數 -->
+<app-modal [selectedDay]="this.txtWeekDay1"  [buttonShowText]="'顯示Modal1'" (getSelectedDateInModal)="putSelectedDateInDefault1($event)"></app-modal>
+<hr>
+
+<input type="text" [(ngModel)]="txtWeekDay2">
+<app-modal [selectedDay]="this.txtWeekDay2" [buttonShowText]="'顯示Modal2'" (getSelectedDateInModal)="putSelectedDateInDefault2($event)"></app-modal>
+<hr>
+
+<input type="text" [(ngModel)]="txtWeekDay3">
+<app-modal [selectedDay]="this.txtWeekDay3" [buttonShowText]="'顯示Modal3'" (getSelectedDateInModal)="putSelectedDateInDefault3($event)"></app-modal>
+<hr>
+

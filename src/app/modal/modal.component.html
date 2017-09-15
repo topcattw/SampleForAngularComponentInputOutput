@@ -1,0 +1,33 @@
+<!-- 透過ngClass來綁show這個css class -->
+<button (click)="this.ModalShow='Show'">{{this.buttonShowText}}</button>
+<div class="modal" [ngClass]="{show: this.ModalShow}">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <!-- 打X關閉顯示，這裡用click事件綁定，處理ModalShow='' -->
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" (click)="this.ModalShow=''">&times;</button>
+        <h4 class="modal-title">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        <p>One fine body…</p>
+        <form action="">
+          <!-- 透過ngModel綁定selectedDay -->
+          <select name="WeekDay" id="WeekDay" [(ngModel)]="selectedDay">
+            <option value="星期一">星期一</option>
+            <option value="星期二">星期二</option>
+            <option value="星期三">星期三</option>
+            <option value="星期四">星期四</option>
+            <option value="星期五">星期五</option>
+            <option value="星期六">星期六</option>
+            <option value="星期日">星期日</option>
+          </select>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="this.ModalShow='';">Close</button>
+        <!-- doOutputSelect Function -->
+        <button type="button" class="btn btn-primary" (click)="doOutputSelect()">確認選取</button>
+      </div>
+    </div>
+  </div>
+</div>
